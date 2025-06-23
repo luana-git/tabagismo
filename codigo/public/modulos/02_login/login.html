@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   try {
     const usuarioLocal = JSON.parse(localStorage.getItem('usuarioLogado'));
     if (usuarioLocal && usuarioLocal.id) {
-      const response = await fetch(`http://localhost:3000/usuarios/${usuarioLocal.id}`);
+      const response = await fetch(`/api/usuarios/${usuarioLocal.id}`);
       if (!response.ok) throw new Error('Erro ao buscar usuário logado');
       const usuarioServidor = await response.json();
 

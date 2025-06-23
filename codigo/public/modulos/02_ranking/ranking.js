@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/rankingProfissionais";
+const API_URL = "/api/rankingProfissionais";
     let profissionalSelecionado = null;
     let notaSelecionada = 0;
 

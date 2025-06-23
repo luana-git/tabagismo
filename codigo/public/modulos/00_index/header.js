@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_URL = 'http://localhost:3000/usuarios';
+    const API_URL = '/api/usuarios';
 
     // ---------------------
     // VERIFICAÇÃO DE LOGIN
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Função para garantir que o campo 'pontos' exista
             const inicializarPontosSeNecessario = () => {
                 if (usuarioLogado.pontos === undefined) {
-                    return fetch(`http://localhost:3000/usuarios/${userId}`, {
+                    return fetch(`/api/usuarios/${userId}`, {
                         method: "PATCH",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ pontos: 0 })
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const desafioTitulo = document.querySelector(".conteudo-desafio strong").textContent;
                 const btn = document.getElementById("botaoDesafio");
 
-                fetch("http://localhost:3000/desafios")
+                fetch("/api/desafios")
                     .then(res => res.json())
                     .then(desafios => {
                         const desafioSemanal = desafios.find(d => d.titulo === desafioTitulo);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             btn.addEventListener("click", () => {
                                 const novaPontuacao = (usuarioLogado.pontos ?? 0) + pontosDesafio;
 
-                                fetch(`http://localhost:3000/usuarios/${userId}`, {
+                                fetch(`api/usuarios/${userId}`, {
                                     method: "PATCH",
                                     headers: { "Content-Type": "application/json" },
                                     body: JSON.stringify({ pontos: novaPontuacao })
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Atualiza no banco se novos selos foram conquistados
             if (novosSelos.length > 0) {
-                fetch(`http://localhost:3000/usuarios/${userId}`, {
+                fetch(`/api/usuarios/${userId}`, {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ selos: [...selosDoBanco, ...novosSelos] })

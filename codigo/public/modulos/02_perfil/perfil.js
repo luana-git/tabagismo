@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const logoutBtn = document.getElementById('botao-logout');
 
-    const API_URL_USUARIOS = "http://localhost:3000/usuarios";
-    const API_URL_RANKING = "http://localhost:3000/rankingProfissionais";
+    const API_URL_USUARIOS = "/api/usuarios";
+    const API_URL_RANKING = "/api/rankingProfissionais";
     let usuarioAtual = null;
 
     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));

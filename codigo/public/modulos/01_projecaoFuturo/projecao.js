@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function preencherFormulario() {
         try {
-            const res = await fetch(`http://localhost:3000/usuarios/${usuarioId}`);
+            const res = await fetch(`/api/usuarios/${usuarioId}`);
             const usuario = await res.json();
 
             document.getElementById('perfil-de-uso').value = usuario.perfilDeUso;
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
+            await fetch(`/api/usuarios/${usuarioId}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dadosAtualizados)
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function calcularProjecao() {
         try {
-            const res = await fetch(`http://localhost:3000/usuarios/${usuarioId}`);
+            const res = await fetch(`/api/usuarios/${usuarioId}`);
             const usuario = await res.json();
 
             const agora = new Date();
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function mostrarProjecaoDeSaude(diasSemFumar) {
         try {
-            const res = await fetch('http://localhost:3000/projecaoDeSaude');
+            const res = await fetch('/api/projecaoDeSaude');
             const projecoes = await res.json();
 
             const aplicaveis = projecoes.filter(p => diasSemFumar >= p.tempoEmDias);

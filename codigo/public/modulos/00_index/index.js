@@ -6,7 +6,7 @@
 //Desafios semanais
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_URL = 'http://localhost:3000/usuarios';
+    const API_URL = '/api/usuarios';
 
     // ---------------------
     // VERIFICAÇÃO DE LOGIN
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function mostrarProjecaoDeSaude(diasSemFumar) {
         try {
-            const res = await fetch('http://localhost:3000/projecaoDeSaude');
+            const res = await fetch('/api/projecaoDeSaude');
             const projecoes = await res.json();
 
             const aplicaveis = projecoes.filter(p => diasSemFumar >= p.tempoEmDias);

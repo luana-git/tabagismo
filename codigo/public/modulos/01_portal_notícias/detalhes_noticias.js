@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000"; // Use seu IP depois
+const API_URL = "/api"; // Use seu IP depois
 
 async function fetchNoticiaById(id) {
   try {

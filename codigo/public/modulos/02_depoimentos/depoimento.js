@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API_URL = "http://localhost:3000/depoimentos";
+  const API_URL = "/api/depoimentos";
 
   let nomeUsuario = "Conta";
   try {
