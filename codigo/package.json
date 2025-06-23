@@ -1,0 +1,16 @@
+{
+  "name": "nosmolking-app",
+  "version": "1.0.0",
+  "description": "Site e API anti-tabagismo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Rommel Vieira Carneiro",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "json-server": "^0.17.3"
+  }
+}
